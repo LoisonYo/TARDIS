@@ -51,21 +51,21 @@ public class Camera : MonoBehaviour
         if (angle > 2.0f)
         {
             currentState = State.AROUND;
-            angle = 0.0f;
+            angle = Mathf.PI / 4;
         }
     }
 
     void Around()
     {
         float CENTER_X = 0.0f;
-        float CENTER_Y = 4.5f;
+        float CENTER_Y = 4.0f;
         float CENTER_Z = 0.0f;
-        float RADIUS = 4.0f;
+        float RADIUS = 5.5f;
         float SHIFT_X = 0.0f;
         float SHIFT_Z = 0.0f;
 
         transform.position = GetCirclePosition(CENTER_X, CENTER_Y, CENTER_Z, RADIUS, angle, SHIFT_X, SHIFT_Z);
-        transform.rotation = FixCenter(angle, CENTER_X, CENTER_Y, 3.0f, SHIFT_X, SHIFT_Z);
+        transform.rotation = FixCenter(angle, CENTER_X, CENTER_Y, 2.0f, SHIFT_X, SHIFT_Z);
         angle += (Mathf.PI / 50.0f) * Time.deltaTime;
     }
 
