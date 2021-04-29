@@ -6,8 +6,8 @@ public class LightsManager : MonoBehaviour
 {
     private TardisSingleton singleton;
     private Light wallRoundYellowLights;
-    private Light topLights;
-    private Light topRealLights;
+    private RotatingLight topLights;
+    private RotatingLight topRealLights;
     private Light catwalkLights;
     private Light bottomWallBlueLight;
     private Light topWallBlueLight;
@@ -18,8 +18,8 @@ public class LightsManager : MonoBehaviour
     {
         singleton = TardisSingleton.GetInstance();
         wallRoundYellowLights = new Light("WallDecorationYellowLight");
-        topLights = new Light("MainLight", true);
-        topRealLights = new Light("Light");
+        topLights = new RotatingLight("MainLight", true);
+        topRealLights = new RotatingLight("Light");
         catwalkLights = new Light("CatwalkLight");
         bottomWallBlueLight = new Light("LongBlueLight");
         topWallBlueLight = new Light("WallDecorationBlueLight");
@@ -32,22 +32,28 @@ public class LightsManager : MonoBehaviour
         switch(singleton.state)
         {
             case TardisState.Starting_1:
-                bottomWallBlueLight.TurnOn();
-                topWallBlueLight.TurnOn();
+                bottomWallBlueLight.TurnAllOn();
+                topWallBlueLight.TurnAllOn();
                 break;
 
             case TardisState.Starting_2:
-                catwalkLights.TurnOn();
-                topWallOrangeLight.TurnOn();
+                catwalkLights.TurnAllOn();
+                topWallOrangeLight.TurnAllOn();
                 break;
 
             case TardisState.Starting_3:
-                topLights.TurnOn();
-                topRealLights.TurnOn();
+                topLights.TurnAllOn();
+                topRealLights.TurnAllOn();
                 break;
 
             case TardisState.Starting_4:
-                wallRoundYellowLights.TurnOn();
+                wallRoundYellowLights.TurnAllOn();
+                break;
+
+            case TardisState.TakeOff_1:
+            case TardisState.Flying:
+                topRealLights.Rotate(Time.deltaTime);
+                topLights.Rotate(Time.deltaTime);
                 break;
         }
     }

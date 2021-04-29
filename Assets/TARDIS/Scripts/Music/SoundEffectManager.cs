@@ -25,41 +25,35 @@ public class SoundEffectManager : MonoBehaviour
     {
         Debug.Log(audioSource.isPlaying);
 
-        if (lastState != singleton.state)
+        switch (singleton.state)
         {
-            switch (singleton.state)
-            {
-                case TardisState.Shutdown:
-                    if (lastState != singleton.state)
-                    {
-                        audioSource.Stop();
-                        audioSource.clip = starting;
-                        audioSource.Play();
-                    }
-                    break;
+            case TardisState.Shutdown:
+                if (lastState != singleton.state)
+                {
+                    audioSource.clip = starting;
+                    audioSource.Play();
+                }
+                break;
 
-                case TardisState.Starting_1:
-                case TardisState.Starting_2:
-                case TardisState.Starting_3:
-                case TardisState.Starting_4:
-                case TardisState.Started:
-                    if (!audioSource.isPlaying)
-                    {
-                        audioSource.Stop();
-                        audioSource.clip = humming;
-                        audioSource.Play();
-                    }
-                    break;
-
-
-                case TardisState.TakeOff_1:
-                    audioSource.Stop();
+            case TardisState.TakeOff_1:
+                if (lastState != singleton.state)
+                {
                     audioSource.clip = takeOff;
                     audioSource.Play();
-                    break;
-            }
+                }
+                break;
 
-            lastState = singleton.state;
+            default:
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.clip = humming;
+                    audioSource.Play();
+
+                    lastState = singleton.state;
+                }
+                break;
         }
+
+        lastState = singleton.state;
     }
 }

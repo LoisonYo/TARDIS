@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Light
 {
-    private bool children;
-    private GameObject[] lights;
-    private bool active;
+    protected bool children;
+    protected GameObject[] lights;
+    protected bool active;
 
     public Light(string tag, bool children = false)
     {
@@ -14,22 +14,22 @@ public class Light
         lights = GameObject.FindGameObjectsWithTag(tag);
         active = true;
 
-        TurnOff();
+        TurnAllOff();
     }
 
-    public void TurnOn()
+    public void TurnAllOn()
     {
         if(active == false)
-            Turn(true);
+            TurnAll(true);
     }
 
-    public void TurnOff()
+    public void TurnAllOff()
     {
         if (active == true)
-            Turn(false);
+            TurnAll(false);
     }
 
-    private void Turn(bool on)
+    protected void TurnAll(bool on)
     {
         foreach (GameObject light in lights)
         {
@@ -46,5 +46,21 @@ public class Light
         }
 
         active = on;
+    }
+
+    protected void Turn(bool on, int index)
+    {
+        GameObject light = lights[index];
+
+        light.active = on;
+
+        if (children == true)
+        {
+            Transform[] allChildren = light.GetComponentsInChildren<Transform>();
+            foreach (Transform child in allChildren)
+            {
+                child.gameObject.GetComponent<Renderer>().enabled = on;
+            }
+        }
     }
 }
