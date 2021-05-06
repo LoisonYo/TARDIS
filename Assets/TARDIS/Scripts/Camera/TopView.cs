@@ -42,20 +42,15 @@ public class TopView : CameraMovement
     {
         Vector3 result = new Vector3(0.0f, 0.0f, 0.0f);
 
-        result.x = 2.2f;
-        result.y = 5.5f;
-        result.z = -3.5f;
+        result.x = 2.465f;
+        result.y = 4.763f;
+        result.z = -4.416f;
 
         return result;
     }
 
     private Quaternion GetRotation()
     {
-        float rtod = 180.0f / Mathf.PI;
-        float x = 0.0f;
-        float y = 25.0f;
-        float z = 0.0f;
-
-        return Quaternion.Euler(x * rtod, y * rtod, z * rtod);
+        return Quaternion.Euler(9.684f, -29.534f, 0.051f);
     }
 }

@@ -6,6 +6,7 @@ public class LightsManager : MonoBehaviour
 {
     private TardisSingleton singleton;
     private Light wallRoundYellowLights;
+    private Light orangeEngineLights;
     private Light rotorWhiteLights;
     private RotatingLight topLights;
     private RealRotatingLight topRealLights;
@@ -19,6 +20,7 @@ public class LightsManager : MonoBehaviour
     {
         singleton = TardisSingleton.GetInstance();
         rotorWhiteLights = new Light("TimeRotorWhiteLight");
+        orangeEngineLights = new Light("EngineLight");
         wallRoundYellowLights = new Light("WallDecorationYellowLight");
         topLights = new RotatingLight("MainLight", true);
         topRealLights = new RealRotatingLight("Light");
@@ -41,6 +43,7 @@ public class LightsManager : MonoBehaviour
             case TardisState.Starting_2:
                 catwalkLights.TurnAllOn();
                 topWallOrangeLight.TurnAllOn();
+                orangeEngineLights.TurnAllOn();
                 break;
 
             case TardisState.Starting_3:

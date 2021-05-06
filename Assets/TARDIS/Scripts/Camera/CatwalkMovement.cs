@@ -20,7 +20,7 @@ public class CatwalkMovement : CameraMovement
 
     public override bool IsFinished()
     {
-        return false;
+        return angle > 1.5f;
     }
 
     public override void Next()
@@ -30,9 +30,9 @@ public class CatwalkMovement : CameraMovement
         angle += (Mathf.PI / 50.0f) * Time.deltaTime;
     }
 
-    public virtual CameraMovement GetNextMovement()
+    public override CameraMovement GetNextMovement()
     {
-        return null;
+        return new ConsoleMovement(camera);
     }
 
     private Vector3 GetPosition(float angle)
