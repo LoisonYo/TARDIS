@@ -5,29 +5,29 @@ using UnityEngine;
 public class LightsManager : MonoBehaviour
 {
     private TardisSingleton singleton;
-    private Light wallRoundYellowLights;
-    private Light orangeEngineLights;
-    private Light rotorWhiteLights;
+    private TardisLight wallRoundYellowLights;
+    private TardisLight orangeEngineLights;
+    private TardisLight rotorWhiteLights;
     private RotatingLight topLights;
     private RealRotatingLight topRealLights;
-    private Light catwalkLights;
-    private Light bottomWallBlueLight;
-    private Light topWallBlueLight;
-    private Light topWallOrangeLight;
+    private TardisLight catwalkLights;
+    private TardisLight bottomWallBlueLight;
+    private TardisLight topWallBlueLight;
+    private TardisLight topWallOrangeLight;
 
     // Start is called before the first frame update
     void Start()
     {
         singleton = TardisSingleton.GetInstance();
-        rotorWhiteLights = new Light("TimeRotorWhiteLight");
-        orangeEngineLights = new Light("EngineLight");
-        wallRoundYellowLights = new Light("WallDecorationYellowLight");
+        rotorWhiteLights = new TardisLight("TimeRotorWhiteLight");
+        orangeEngineLights = new TardisLight("EngineLight");
+        wallRoundYellowLights = new TardisLight("WallDecorationYellowLight");
         topLights = new RotatingLight("MainLight", true);
         topRealLights = new RealRotatingLight("Light");
-        catwalkLights = new Light("CatwalkLight");
-        bottomWallBlueLight = new Light("LongBlueLight");
-        topWallBlueLight = new Light("WallDecorationBlueLight");
-        topWallOrangeLight = new Light("WallDecorationOrangeLight");
+        catwalkLights = new TardisLight("CatwalkLight");
+        bottomWallBlueLight = new TardisLight("LongBlueLight");
+        topWallBlueLight = new TardisLight("WallDecorationBlueLight");
+        topWallOrangeLight = new TardisLight("WallDecorationOrangeLight");
     }
 
     // Update is called once per frame

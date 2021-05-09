@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotatingLight : Light
+public class RotatingLight : TardisLight
 {
     private const float WAIT_TIME = 0.2f;
 

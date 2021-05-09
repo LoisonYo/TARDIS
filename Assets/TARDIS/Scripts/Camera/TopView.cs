@@ -33,7 +33,7 @@ public class TopView : CameraMovement
         }
     }
 
-    public virtual CameraMovement GetNextMovement()
+    public override CameraMovement GetNextMovement()
     {
         return null;
     }
