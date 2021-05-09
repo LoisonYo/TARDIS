@@ -15,8 +15,8 @@ A la base, ce projet était personnel réalisé par Yohann Loison. Suite à quel
 ## Etapes prévues
 
 - [x] Modèle Blender
-
-- [x] Cinématique sous Unity (Projet d'infographie)
+- [x] Matériaux et lumières (Projet d'infographie)
+- [x] Cinématique (Projet d'infographie)
 - [ ] Plus grand à l'intérieur 
 - [ ] Déplacement de la cabine de police entre plusieurs biomes
 - [ ] Interactions (console, porte, etc...)
