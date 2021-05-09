@@ -1,0 +1,2 @@
+TardisBlender/TARDIS.blend filter=lfs diff=lfs merge=lfs -text
+Rendu/Build/TARDIS_Data/sharedassets0.resource filter=lfs diff=lfs merge=lfs -text
