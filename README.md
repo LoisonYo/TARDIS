@@ -1,8 +1,8 @@
-# ..TARDIS HDRP
+# TARDIS HDRP
 
 Bienvenu sur le projet TARDIS HDRP !
 
-![screenshot_1](.\screenshots\screenshot_1.png)
+![Screenshot](https://github.com/LoisonYo/TARDIS/blob/main/Screenshots/screenshot_1.png)
 
 
 
