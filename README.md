@@ -21,3 +21,5 @@ A la base, ce projet était personnel réalisé par Yohann Loison. Suite à quel
 - [ ] Déplacement de la cabine de police entre plusieurs biomes
 - [ ] Interactions (console, porte, etc...)
 - [ ] ...
+
+![image](https://user-images.githubusercontent.com/15814178/125338711-d11a9080-e350-11eb-9ced-cc6dbba17873.png)
